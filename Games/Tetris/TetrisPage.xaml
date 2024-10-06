@@ -1,0 +1,100 @@
+﻿<Page x:Class="Project_C_.Games.Tetris.TetrisPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Project_C_.Games.Tetris"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="920"
+      Title="Tetris Game Page">
+
+    <Grid  Background="{StaticResource Background}">
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Tetris" Width="71" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   FontWeight="ExtraBold" FontSize="21" FontFamily="Guttman Aharoni" Foreground="#FF4E669E" 
+                   BorderBrush="#FF4E669E" BorderThickness="0,0,0,3" 
+                   Grid.Column="1" Margin="224,20,0,0" Height="50"/>
+            <Ellipse Cursor="Hand"
+                     Style="{StaticResource CloseButton}" 
+                     Grid.Column="1" 
+                     x:Name="CloseButton" 
+                     Width="20" 
+                     Height="20" 
+                     MouseLeftButtonDown="CloseButton_MouseLeftButtonDown" Margin="690,10,10,40"
+                     />
+            <Ellipse Cursor="Hand"
+                     Style="{StaticResource HideButton}"  
+                     Grid.Column="1" 
+                     x:Name="HideButton" 
+                     Width="20" 
+                     Height="20" 
+                     MouseLeftButtonDown="HideButton_MouseLeftButtonDown" Margin="665,10,35,40"
+                     />
+            <Border Cursor="Hand" Grid.Column="0 " Grid.Row="0" BorderThickness="0.5" BorderBrush="#FF1354F5" Background="#FF4E669E" Margin="10,14,101,27" MouseLeftButtonDown="Border_MouseLeftButtonDown_1">
+                <Label Content="Go Back" FontSize="14" FontWeight="DemiBold" HorizontalAlignment="Center" Foreground="#FFAFC7FF"/>
+            </Border>
+
+
+        </Grid>
+
+        <Grid Grid.Row="1" Background="{StaticResource ViewBackground}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Background="{DynamicResource SolidColor}" >
+                <StackPanel Orientation="Horizontal" Width="176" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="/Images/CSharp.png" Width="50" Height="40" Margin="5,0,10,0" />
+                    <Image Source="/Images/Xaml.png" Width="50" Height="40" Margin="0,0,10,0" />
+                    <Image Source="/Images/dotnet.png" Width="50" Height="40" Margin="0,0,10,0" />
+
+                </StackPanel>
+            </Grid>
+
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Background="{DynamicResource Background}"/>
+                <Image Grid.Column="0" Source="../../Images/PageImages/Tetris.png" Margin="58,63,58,63"/>
+
+                <TextBlock Grid.Column="1" VerticalAlignment="Top" FontWeight="Medium" FontSize="14.8" FontFamily="Guttman Aharoni" Foreground="#FF4E669E" Margin="12,144,0,0" Height="99">
+                Enjoy a classic game of Tetris!<LineBreak/> 
+                Stack and rotate falling blocks<LineBreak/> 
+                to clear rows and score points.<LineBreak/> 
+                It's a fun and addictive way to test<LineBreak/>
+                your skills and reflexes.
+                </TextBlock>
+                <Border Cursor="Hand" Grid.Column="1" Width="120" Height="30" BorderThickness="0.5" BorderBrush="#FF1354F5" Background="#FF4E669E" Margin="12,243,328,172" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                    <Label Content="Play Now!" FontSize="14" FontWeight="DemiBold" HorizontalAlignment="Center" Foreground="#FFAFC7FF"/>
+                </Border>
+
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Label Content="Tameer Kn" Margin="0,-5,0,0" Foreground="#FF4E669E"/>
+            <Label Margin="0,9,0,0"  Content="Copyright © 2024. All Rights Reserved" Foreground="#FF4E669E"/>
+            <Image Source="/Images/color_logo.png" Margin="872,2,5,3" Height="30" Width="42"/>
+        </Grid>
+
+
+    </Grid>
+</Page>

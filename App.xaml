@@ -1,0 +1,30 @@
+﻿<Application x:Class="Project_C_.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Project_C_"
+             xmlns:viewModel="clr-namespace:Project_C_.ViewModel"
+             xmlns:view="clr-namespace:Project_C_.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/MenuTheme.xaml"/>
+                <ResourceDictionary Source="Themes/PageMenuTheme.xaml"/>
+                <ResourceDictionary Source="Themes/CardTheme.xaml"/>
+                <ResourceDictionary Source="Themes/CloseButton.xaml"/>
+                <ResourceDictionary Source="Themes/HideButton.xaml"/>
+                <ResourceDictionary Source="Themes/SwitchButton.xaml"/>
+                <ResourceDictionary Source="Themes/LightTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:GamesView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:WebappsViewModel}">
+                <view:WebappsView/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

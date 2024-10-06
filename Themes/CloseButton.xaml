@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+            <Style TargetType="{x:Type Ellipse}" x:Key="CloseButton">
+                <Setter Property="Fill" Value="DarkRed" />
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Fill">
+                    <Setter.Value>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FFFF3838" Offset="0.23"/>
+                            <GradientStop Color="DarkRed" Offset="0.653" />
+                        </RadialGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+                </Style.Triggers>
+            </Style>
+
+
+</ResourceDictionary>

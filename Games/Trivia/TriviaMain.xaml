@@ -1,0 +1,158 @@
+﻿<Window x:Class="Project_C_.Games.Trivia.TriviaMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_C_.Games.Trivia"
+        mc:Ignorable="d"
+        Title="Trivia" 
+        Height="480" 
+        Width="700"
+        Icon="Icon.ico"
+        WindowStyle="none"
+        ResizeMode="NoResize"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown" >
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="{DynamicResource Background}">
+            <Image Source="/Images/color_logo.png" Margin="-1,0,0,441"/>
+            <Rectangle Width="130" Height="3" Margin="0,0,0,390" >
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="#FF363D4C"/>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Height="150" Margin="0,52,0,278">
+                <Label Content="Subject:" FontWeight="DemiBold" FontSize="12" Foreground="#FF4E669E" />
+                <ComboBox Cursor="Hand" x:Name="cb1" Width="112" Height="24" SelectionChanged="cb1_SelectionChanged">
+                    <ComboBoxItem Content="World Wonders"/>
+                    <ComboBoxItem Content="Ancient Civilizations"/>
+                </ComboBox>
+
+                <Label Content="Difficulty:" FontWeight="DemiBold" FontSize="12" Foreground="#FF4E669E" />
+                <ComboBox Cursor="Hand" x:Name="cb2" Width="112" Height="24" SelectionChanged="cb2_SelectionChanged">
+                    <ComboBoxItem Content="Easy"/>
+                    <ComboBoxItem Content="Medium"/>
+                    <ComboBoxItem Content="Hard"/>
+                </ComboBox>
+                <Border Cursor="Hand" x:Name="StartButton"  Width="100" Margin="5" Height="30" BorderThickness="0.5" BorderBrush="#FF1354F5" Background="#FF4E669E" MouseLeftButtonDown="StartButton_MouseLeftButtonDown">
+                    <Label Content="Start" FontSize="14" FontWeight="DemiBold" HorizontalAlignment="Center" Foreground="#FFAFC7FF"/>
+                </Border>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Height="80" Margin="0,358,0,42">
+                <Border Cursor="Hand" x:Name="RestartButton"  Width="100" Margin="5" Height="30" BorderThickness="0.5" BorderBrush="#FF1354F5" Background="#FF4E669E" MouseLeftButtonDown="RestartButton_MouseLeftButtonDown">
+                    <Label Content="Restart Game" FontSize="14" FontWeight="DemiBold" HorizontalAlignment="Center" Foreground="#FFAFC7FF"/>
+                </Border>
+                <Border Cursor="Hand" x:Name="ExitButton" Width="100" Margin="5" Height="30" BorderThickness="0.5" BorderBrush="#FF1354F5" Background="#FF4E669E" MouseLeftButtonDown="ExitButton_MouseLeftButtonDown">
+                    <Label Content="Exit" FontSize="14" FontWeight="DemiBold" HorizontalAlignment="Center" Foreground="#FFAFC7FF"/>
+                </Border>
+            </StackPanel>
+
+            <Rectangle Width="130" Height="3" Margin="0,440,0,31" >
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="#FF363D4C"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <CheckBox  Cursor="Hand"
+                       Style="{StaticResource Switch}" 
+                       Content="DarkMode"
+                       FontSize="13" 
+                       FontFamily="Guttman Aharoni" 
+                       FontWeight="Light" 
+                       Foreground="#FF4E669E" 
+                       Checked="CheckBox_Checked" 
+                       Unchecked="CheckBox_UnChecked" Margin="5,451,5,9" 
+                       />
+        </Grid>
+
+
+        <Grid Grid.Column="1" Background="{DynamicResource ViewBackground}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="410"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label FontSize="27" FontWeight="UltraBold" Foreground="#FF4E669E" Content="Trivia" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Ellipse Style="{StaticResource HideButton}"
+            x:Name="HideButton" 
+            Margin="540,10,10,380"
+            Width="20" Height="20" 
+            MouseLeftButtonDown="HideButton_MouseLeftButtonDown"/>
+
+
+
+            <Border BorderThickness="1.5" BorderBrush="#FF6388DE" Width="500" Height="150" Margin="35,55,35,205">
+                <Grid>
+                    <TextBlock Text="Question:" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFD7E3FF" Margin="0,10,0,0"/>
+                    <TextBlock x:Name ="questionText" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFD7E3FF" FontSize="13"/>
+                </Grid>
+                <Border.Background>
+                    <SolidColorBrush Color="#FF4169C7" Opacity="0.8"/>
+                </Border.Background>
+            </Border>
+
+            <Grid Width="500" Height="150" Margin="35,240,35,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Border Cursor="Hand" x:Name="AnswerButton1"  Margin="10,15,265,15" Width="225" Height="45" BorderThickness="0.5" BorderBrush="#FF1354F5" Background="#FF4E669E" MouseLeftButtonDown="AnswerButton1_MouseLeftButtonDown" >
+                    <Label x:Name="Answer1" FontSize="14" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFAFC7FF"/>
+                </Border>
+                <Border Cursor="Hand" x:Name="AnswerButton2"  Margin="265,15,10,15" Width="225" Height="45" BorderThickness="0.5" BorderBrush="#FF1354F5" Background="#FF4E669E" MouseLeftButtonDown="AnswerButton2_MouseLeftButtonDown">
+                    <Label x:Name="Answer2" FontSize="14" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFAFC7FF"/>
+                </Border>
+
+                <Border Cursor="Hand" x:Name="AnswerButton3"  Margin="10,0,265,30" Width="225" Height="45" BorderThickness="0.5" BorderBrush="#FF1354F5" Background="#FF4E669E" Grid.Row="1" MouseLeftButtonDown="AnswerButton3_MouseLeftButtonDown">
+                    <Label x:Name="Answer3" FontSize="14" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFAFC7FF"/>
+                </Border>
+                <Border Cursor="Hand" x:Name="AnswerButton4"  Margin="265,0,10,30" Width="225" Height="45" BorderThickness="0.5" BorderBrush="#FF1354F5" Background="#FF4E669E" Grid.Row="1" MouseLeftButtonDown="AnswerButton4_MouseLeftButtonDown">
+                    <Label x:Name="Answer4" FontSize="14" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFAFC7FF"/>
+                </Border>
+
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.725">
+                        <GradientStop Color="#FF92B2FD"/>
+                        <GradientStop Color="#FF00216F" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <TextBlock x:Name="scoreText" Text="Score:" FontSize="18" FontWeight="DemiBold" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFD7E3FF" Margin="50,10,0,0" Width="219"/>
+                <TextBlock x:Name="timeText" Text="Time:" FontSize="18" HorizontalAlignment="Left" FontWeight="DemiBold" VerticalAlignment="Top" Foreground="#FFD7E3FF" Margin="50,40,0,0" Width="219"/>
+                <TextBlock x:Name="subjectText" Text="Subject:" FontSize="18" HorizontalAlignment="Right" FontWeight="DemiBold" VerticalAlignment="Top" Foreground="#FFD7E3FF" Margin="0,10,10,0" Width="251"/>
+                <TextBlock x:Name="difficultyText" Text="Difficulty:" FontSize="18" HorizontalAlignment="Right" FontWeight="DemiBold" VerticalAlignment="Top" Foreground="#FFD7E3FF" Margin="0,40,10,0" Width="251"/>
+
+            </Grid>
+
+            <Grid Grid.Column="1"
+                  x:Name="GameOverMenu"
+                  Visibility="Hidden">
+                <Grid.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.9"/>
+                </Grid.Background>
+                <Label Content="Game Over"
+                       Foreground="#FF4E669E"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="40"/>
+                <TextBlock Text="Click on restart game to play again!"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Top" 
+                           Margin="0,237,0,0"
+                           Foreground="#FF4E669E"
+                           FontSize="20"/>
+            </Grid>
+            
+        </Grid>
+    </Grid>
+
+</Window>

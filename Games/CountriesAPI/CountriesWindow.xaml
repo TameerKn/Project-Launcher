@@ -1,0 +1,86 @@
+﻿<Window x:Class="Project_C_.Games.CountriesAPI.CountriesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_C_.Games.CountriesAPI"
+        mc:Ignorable="d"
+        Title="Countries List" 
+        Height="600" 
+        Width="800"
+        Icon="Icon.ico"
+        ResizeMode="NoResize" 
+        WindowStyle="None"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown" >
+    <Grid Background="{DynamicResource ViewBackground}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Content="Countries List API" FontSize="17" FontWeight="DemiBold" Foreground="#FF4E669E"/>
+        <Ellipse Cursor="Hand"
+                 Style="{StaticResource CloseButton}" 
+                 Grid.Row="0" 
+                 x:Name="CloseButton"    
+                 Width="20" Height="20" 
+                 MouseLeftButtonDown="CloseButton_MouseLeftButtonDown" Margin="777,5,3,41"/>
+        <Ellipse Cursor="Hand"   
+                 Style="{StaticResource HideButton}"  
+                 Grid.Row="0" 
+                 x:Name="HideButton" 
+                 Margin="752,5,28,41" 
+                 Width="20" Height="20" 
+                 MouseLeftButtonDown="HideButton_MouseLeftButtonDown"
+                     />
+        <CheckBox      Cursor="Hand"
+                       Style="{StaticResource Switch}" 
+                       Content="DarkMode"
+                       FontSize="13" 
+                       FontFamily="Guttman Aharoni" 
+                       FontWeight="Light" 
+                       Foreground="#FF4E669E" 
+                       Checked="CheckBox_Checked" 
+                       Unchecked="CheckBox_UnChecked"
+                       Width="120" Margin="615,5,65,40"
+                       />
+        <Rectangle Height="3">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#FF363D4C"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <!-- Search and Filter Controls -->
+        <StackPanel Orientation="Horizontal" Margin="0,38,338,2">
+            <Label Content="Search Country:" FontWeight="DemiBold" Foreground="#FF4E669E"/>
+            <TextBox x:Name="SearchTextBox" Width="200" Margin="0,0,10,0" BorderThickness="1.4" BorderBrush="#FF4E669E" TextChanged="SearchTextBox_TextChanged" />
+            <ComboBox Cursor="Hand" x:Name="RegionFilterComboBox" Width="150" SelectionChanged="RegionFilterComboBox_SelectionChanged">
+                <ComboBoxItem Content="All Regions" IsSelected="True"/>
+                <ComboBoxItem Content="Africa"/>
+                <ComboBoxItem Content="Americas"/>
+                <ComboBoxItem Content="Asia"/>
+                <ComboBoxItem Content="Europe"/>
+                <ComboBoxItem Content="Oceania"/>
+            </ComboBox>
+            <!--<Button Content="Sort by Name" Click="SortByNameButton_Click" Margin="10,0,0,0"/>-->
+        </StackPanel>
+
+        <!-- DataGrid to Display Countries -->
+        <DataGrid x:Name="CountriesDataGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Margin="3,3,3,3" Foreground="#FF4E669E" BorderBrush="#FF4E669E" BorderThickness="1.4" Background="{DynamicResource Background}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Foreground="#FF4E669E" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Region" Foreground="#FF4E669E" Binding="{Binding Region}"/>
+                <DataGridTextColumn Header="Population" Foreground="#FF4E669E" Binding="{Binding Population}"/>
+                <DataGridTextColumn Header="Capital" Foreground="#FF4E669E" Binding="{Binding CapitalDisplay}"/>
+                <DataGridTemplateColumn Header="Flag">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding FlagImageUrl}" Width="50" Height="30" Stretch="Uniform"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

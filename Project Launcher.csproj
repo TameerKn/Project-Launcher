@@ -1,0 +1,150 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>Project_C_</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Games\Calculator\Icon.ico" />
+    <None Remove="Games\CountriesAPI\Icon.ico" />
+    <None Remove="Games\MemoryCards\Icon.ico" />
+    <None Remove="Games\MyTasks\Icon.ico" />
+    <None Remove="Games\Tetris\Assets\arrow-back.png" />
+    <None Remove="Games\Tetris\Assets\arrow-down.png" />
+    <None Remove="Games\Tetris\Assets\arrow-right.png" />
+    <None Remove="Games\Tetris\Assets\arrow-up.png" />
+    <None Remove="Games\Tetris\Assets\Background.png" />
+    <None Remove="Games\Tetris\Assets\Block-Empty.png" />
+    <None Remove="Games\Tetris\Assets\Block-I.png" />
+    <None Remove="Games\Tetris\Assets\Block-J.png" />
+    <None Remove="Games\Tetris\Assets\Block-L.png" />
+    <None Remove="Games\Tetris\Assets\Block-O.png" />
+    <None Remove="Games\Tetris\Assets\Block-S.png" />
+    <None Remove="Games\Tetris\Assets\Block-T.png" />
+    <None Remove="Games\Tetris\Assets\Block-Z.png" />
+    <None Remove="Games\Tetris\Assets\Icon.ico" />
+    <None Remove="Games\Tetris\Assets\letter-c.png" />
+    <None Remove="Games\Tetris\Assets\letter-e.png" />
+    <None Remove="Games\Tetris\Assets\letter-r.png" />
+    <None Remove="Games\Tetris\Assets\letter-z.png" />
+    <None Remove="Games\Tetris\Assets\space.png" />
+    <None Remove="Games\Tetris\Assets\TileBlue.png" />
+    <None Remove="Games\Tetris\Assets\TileCyan.png" />
+    <None Remove="Games\Tetris\Assets\TileEmpty.png" />
+    <None Remove="Games\Tetris\Assets\TileGreen.png" />
+    <None Remove="Games\Tetris\Assets\TileOrange.png" />
+    <None Remove="Games\Tetris\Assets\TilePurple.png" />
+    <None Remove="Games\Tetris\Assets\TileRed.png" />
+    <None Remove="Games\Tetris\Assets\TileYellow.png" />
+    <None Remove="Games\Tetris\Icon.ico" />
+    <None Remove="Games\TicTacToe\Icon.ico" />
+    <None Remove="Games\Trivia\Icon.ico" />
+    <None Remove="Icon-800x800-BG.png" />
+    <None Remove="Images\api.png" />
+    <None Remove="Images\Calculator.png" />
+    <None Remove="Images\color_logo.png" />
+    <None Remove="Images\CSharp.png" />
+    <None Remove="Images\dotnet.png" />
+    <None Remove="Images\Earth.png" />
+    <None Remove="Images\EarthLogo.png" />
+    <None Remove="Images\Icons\EarthLogo.ico" />
+    <None Remove="Images\Icons\Icon.ico" />
+    <None Remove="Images\Icons\MemoryGame.ico" />
+    <None Remove="Images\Icons\MyTasks.ico" />
+    <None Remove="Images\Icons\Tetris.ico" />
+    <None Remove="Images\Icons\TicTacToe.ico" />
+    <None Remove="Images\Icons\Trivia.ico" />
+    <None Remove="Images\MainIcon.ico" />
+    <None Remove="Images\MemoryGame.png" />
+    <None Remove="Images\MyTasks.png" />
+    <None Remove="Images\PageImages\Calculator.PNG" />
+    <None Remove="Images\PageImages\CountriesList.PNG" />
+    <None Remove="Images\PageImages\MemoryGame.PNG" />
+    <None Remove="Images\PageImages\MyTasks.PNG" />
+    <None Remove="Images\PageImages\Tetris.PNG" />
+    <None Remove="Images\PageImages\TicTacToe.PNG" />
+    <None Remove="Images\PageImages\TriviaGame.PNG" />
+    <None Remove="Images\Pokedex.png" />
+    <None Remove="Images\puzzle-game.png" />
+    <None Remove="Images\Tetris.ico" />
+    <None Remove="Images\TicTacToe.png" />
+    <None Remove="Images\TicTacToePage.PNG" />
+    <None Remove="Images\Trivia.png" />
+    <None Remove="Images\Xaml.png" />
+    <None Remove="logo_black.png" />
+    <None Remove="logo_with_color.png" />
+    <None Remove="View\poke.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Games\Calculator\Icon.ico" />
+    <Resource Include="Games\CountriesAPI\Icon.ico" />
+    <Resource Include="Games\MemoryCards\Icon.ico" />
+    <Resource Include="Games\MyTasks\Icon.ico" />
+    <Resource Include="Games\Tetris\Assets\arrow-back.png" />
+    <Resource Include="Games\Tetris\Assets\arrow-down.png" />
+    <Resource Include="Games\Tetris\Assets\arrow-right.png" />
+    <Resource Include="Games\Tetris\Assets\arrow-up.png" />
+    <Resource Include="Games\Tetris\Assets\Background.png" />
+    <Resource Include="Games\Tetris\Assets\Block-Empty.png" />
+    <Resource Include="Games\Tetris\Assets\Block-I.png" />
+    <Resource Include="Games\Tetris\Assets\Block-J.png" />
+    <Resource Include="Games\Tetris\Assets\Block-L.png" />
+    <Resource Include="Games\Tetris\Assets\Block-O.png" />
+    <Resource Include="Games\Tetris\Assets\Block-S.png" />
+    <Resource Include="Games\Tetris\Assets\Block-T.png" />
+    <Resource Include="Games\Tetris\Assets\Block-Z.png" />
+    <Resource Include="Games\Tetris\Assets\Icon.ico" />
+    <Resource Include="Games\Tetris\Assets\letter-c.png" />
+    <Resource Include="Games\Tetris\Assets\letter-e.png" />
+    <Resource Include="Games\Tetris\Assets\letter-r.png" />
+    <Resource Include="Games\Tetris\Assets\letter-z.png" />
+    <Resource Include="Games\Tetris\Assets\space.png" />
+    <Resource Include="Games\Tetris\Assets\TileBlue.png" />
+    <Resource Include="Games\Tetris\Assets\TileCyan.png" />
+    <Resource Include="Games\Tetris\Assets\TileEmpty.png" />
+    <Resource Include="Games\Tetris\Assets\TileGreen.png" />
+    <Resource Include="Games\Tetris\Assets\TileOrange.png" />
+    <Resource Include="Games\Tetris\Assets\TilePurple.png" />
+    <Resource Include="Games\Tetris\Assets\TileRed.png" />
+    <Resource Include="Games\Tetris\Assets\TileYellow.png" />
+    <Resource Include="Games\Tetris\Icon.ico" />
+    <Resource Include="Games\TicTacToe\Icon.ico" />
+    <Resource Include="Games\Trivia\Icon.ico" />
+    <Resource Include="Images\api.png" />
+    <Resource Include="Images\Calculator.png" />
+    <Resource Include="Images\color_logo.png" />
+    <Resource Include="Images\CSharp.png" />
+    <Resource Include="Images\dotnet.png" />
+    <Resource Include="Images\EarthLogo.png" />
+    <Resource Include="Images\MainIcon.ico" />
+    <Resource Include="Images\Icons\EarthLogo.ico" />
+    <Resource Include="Images\Icons\Icon.ico" />
+    <Resource Include="Images\Icons\MemoryGame.ico" />
+    <Resource Include="Images\Icons\MyTasks.ico" />
+    <Resource Include="Images\Icons\Tetris.ico" />
+    <Resource Include="Images\Icons\TicTacToe.ico" />
+    <Resource Include="Images\Icons\Trivia.ico" />
+    <Resource Include="Images\MemoryGame.png" />
+    <Resource Include="Images\MyTasks.png" />
+    <Resource Include="Images\PageImages\Calculator.PNG" />
+    <Resource Include="Images\PageImages\CountriesList.PNG" />
+    <Resource Include="Images\PageImages\MemoryGame.PNG" />
+    <Resource Include="Images\PageImages\MyTasks.PNG" />
+    <Resource Include="Images\PageImages\Tetris.PNG" />
+    <Resource Include="Images\PageImages\TicTacToe.PNG" />
+    <Resource Include="Images\PageImages\TriviaGame.PNG" />
+    <Resource Include="Images\Pokedex.png" />
+    <Resource Include="Images\puzzle-game.png" />
+    <Resource Include="Images\Tetris.ico" />
+    <Resource Include="Images\TicTacToe.png" />
+    <Resource Include="Images\Trivia.png" />
+    <Resource Include="Images\Xaml.png" />
+  </ItemGroup>
+
+</Project>

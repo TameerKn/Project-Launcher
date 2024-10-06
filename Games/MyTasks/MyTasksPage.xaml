@@ -1,0 +1,99 @@
+﻿<Page x:Class="Project_C_.Games.MyTasks.MyTasksPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Project_C_.Games.MyTasks"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="920"
+      Title="My Tasks Page">
+
+    <Grid  Background="{StaticResource Background}">
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="My Tasks" Width="112" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   FontWeight="ExtraBold" FontSize="21" FontFamily="Guttman Aharoni" Foreground="#FF4E669E" 
+                   BorderBrush="#FF4E669E" BorderThickness="0,0,0,3" 
+                   Grid.Column="1" Margin="204,19,0,0" Height="50"/>
+            <Ellipse Cursor="Hand"
+                     Style="{StaticResource CloseButton}" 
+                     Grid.Column="1" 
+                     x:Name="CloseButton" 
+                     Width="20" 
+                     Height="20" 
+                     MouseLeftButtonDown="CloseButton_MouseLeftButtonDown" Margin="690,8,10,42"
+                     />
+            <Ellipse Cursor="Hand"
+                     Style="{StaticResource HideButton}"  
+                     Grid.Column="1" 
+                     x:Name="HideButton" 
+                     Width="20" 
+                     Height="20" 
+                     MouseLeftButtonDown="HideButton_MouseLeftButtonDown" Margin="665,8,35,42"
+                     />
+            <Border Cursor="Hand" Grid.Column="0 " Grid.Row="0" BorderThickness="0.5" BorderBrush="#FF1354F5" Background="#FF4E669E" Margin="10,14,101,27" MouseLeftButtonDown="Border_MouseLeftButtonDown_1">
+                <Label Content="Go Back" FontSize="14" FontWeight="DemiBold" HorizontalAlignment="Center" Foreground="#FFAFC7FF"/>
+            </Border>
+
+
+        </Grid>
+
+        <Grid Grid.Row="1" Background="{StaticResource ViewBackground}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Background="{DynamicResource SolidColor}" >
+                <StackPanel Orientation="Horizontal" Width="176" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="/Images/CSharp.png" Width="50" Height="40" Margin="5,0,10,0" />
+                    <Image Source="/Images/Xaml.png" Width="50" Height="40" Margin="0,0,10,0" />
+                    <Image Source="/Images/dotnet.png" Width="50" Height="40" Margin="0,0,10,0" />
+
+                </StackPanel>
+            </Grid>
+
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Background="{DynamicResource Background}"/>
+                <Image Grid.Column="0" Width="300" Source="../../Images/PageImages/MyTasks.png" Margin="50,10,50,10"/>
+
+                <TextBlock Grid.Column="1" VerticalAlignment="Top" FontWeight="Medium" FontSize="14.8" FontFamily="Guttman Aharoni" Foreground="#FF4E669E" Margin="12,144,0,0" Height="76">
+                Stay organized and manage your tasks easily<LineBreak/> 
+                with this To-Do List app. <LineBreak/> 
+                as you keep track of what needs to be done.<LineBreak/> 
+                Perfect for staying productive and on top of your day!<LineBreak/>
+                </TextBlock>
+                <Border Cursor="Hand" Grid.Column="1" Width="120" Height="30" BorderThickness="0.5" BorderBrush="#FF1354F5" Background="#FF4E669E" Margin="10,222,330,193" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                    <Label Content="Open" FontSize="14" FontWeight="DemiBold" HorizontalAlignment="Center" Foreground="#FFAFC7FF"/>
+                </Border>
+
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Label Content="Tameer Kn" Margin="0,-5,0,0" Foreground="#FF4E669E"/>
+            <Label Margin="0,9,0,0"  Content="Copyright © 2024. All Rights Reserved" Foreground="#FF4E669E"/>
+            <Image Source="/Images/color_logo.png" Margin="872,2,5,3" Height="30" Width="42"/>
+        </Grid>
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,50 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="{x:Type Border}" x:Key="CardTheme">
+        <Setter Property="Control.BorderBrush">
+            <Setter.Value>
+                <SolidColorBrush Color="Transparent"/>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Grid.ZIndex" Value="1"/>
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform></ScaleTransform>
+                    </Setter.Value>
+                </Setter>
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetProperty="BorderBrush.Color" To="#FF4E6DB7"/>
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1.02333" Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Duration="0:0:0.3" Storyboard.TargetProperty="BorderBrush.Color" To="Transparent"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ScaleStyle" TargetType="Border">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Grid.ZIndex" Value="1"/>
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1.1" ScaleY="1.1"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>
