@@ -4,13 +4,15 @@
 Project Launcher is a multi-functional desktop application built with C# and WPF (.NET 8), designed to serve as a hub for various mini-games and apps. 
 
 ## Features
+
+- Dark Mode 
+- Light Mode
+
 4 Games:
 - Memory Game
 - Trivia Game
 - Tic-Tac-Toe
 - Tetris
-- Dark Mode 
-- Light Mode
 
 3 Apps:
 - Country List (using Rest Countries API)
